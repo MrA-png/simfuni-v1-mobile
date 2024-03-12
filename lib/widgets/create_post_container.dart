@@ -29,7 +29,7 @@ class CreatePostContainer extends StatelessWidget {
                     ),
                   ),
                   child: const SizedBox(
-                    height: 30, // Tinggi yang diinginkan untuk menyamakan
+                    height: 30,
                     child: Row(
                       children: [
                         SizedBox(width: 3),
