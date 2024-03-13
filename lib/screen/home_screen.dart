@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:simfuni_v1/widgets/widget.dart';
 
@@ -7,7 +8,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
+      statusBarColor: Colors.white, // Ubah warna status bar menjadi putih
+      statusBarIconBrightness:
+          Brightness.dark, // Ubah ikon status bar menjadi gelap
+    ));
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 245, 248, 250),
       body: CustomScrollView(
         slivers: [
           SliverPadding(
@@ -25,6 +32,7 @@ class HomeScreen extends StatelessWidget {
               ),
               centerTitle: false,
               floating: true,
+              pinned: true,
               actions: [
                 CircleButton(
                     icon: 'assets/icons/icon_home.png',
@@ -49,20 +57,28 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          SliverToBoxAdapter(
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12.0),
-              child: const Divider(
-                color: Colors.grey,
-                thickness: 1,
-                indent: 10,
-                endIndent: 10,
-              ),
-            ),
-          ),
+          // SliverToBoxAdapter(
+          //   child: Container(
+          //     padding: const EdgeInsets.symmetric(horizontal: 12.0),
+          //     child: const Divider(
+          //       color: Colors.grey,
+          //       thickness: 1,
+          //       indent: 10,
+          //       endIndent: 10,
+          //     ),
+          //   ),
+          // ),
           const SliverToBoxAdapter(
             child: CreatePostContainer(),
-          )
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return const FeedBox();
+              },
+              childCount: 5,
+            ),
+          ),
         ],
       ),
     );
