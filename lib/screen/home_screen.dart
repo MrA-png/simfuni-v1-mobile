@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:simfuni_v1/screen/detail_post.dart';
 import 'package:simfuni_v1/widgets/widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,9 +10,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
-      statusBarColor: Colors.white, // Ubah warna status bar menjadi putih
-      statusBarIconBrightness:
-          Brightness.dark, // Ubah ikon status bar menjadi gelap
+      statusBarColor: Colors.white,
+      statusBarIconBrightness: Brightness.dark,
     ));
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 245, 248, 250),
@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
                 style: GoogleFonts.inriaSans(
                   fontSize: 20,
                   color: const Color(0xff000000),
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w900,
                 ),
               ),
               centerTitle: false,
@@ -57,24 +57,22 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          // SliverToBoxAdapter(
-          //   child: Container(
-          //     padding: const EdgeInsets.symmetric(horizontal: 12.0),
-          //     child: const Divider(
-          //       color: Colors.grey,
-          //       thickness: 1,
-          //       indent: 10,
-          //       endIndent: 10,
-          //     ),
-          //   ),
-          // ),
           const SliverToBoxAdapter(
             child: CreatePostContainer(),
           ),
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
-                return const FeedBox();
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const DetailScreen()),
+                    );
+                  },
+                  child: const FeedBox(),
+                );
               },
               childCount: 5,
             ),

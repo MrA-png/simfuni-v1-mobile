@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simfuni_v1/screen/form_post.dart';
 
 class CreatePostContainer extends StatelessWidget {
   const CreatePostContainer({Key? key}) : super(key: key);
@@ -16,8 +17,11 @@ class CreatePostContainer extends StatelessWidget {
               Expanded(
                 child: TextButton(
                   onPressed: () {
-                    // ignore: avoid_print
-                    print('Search button pressed');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const FormScreen()),
+                    );
                   },
                   style: ButtonStyle(
                     backgroundColor:
@@ -45,8 +49,10 @@ class CreatePostContainer extends StatelessWidget {
               const SizedBox(width: 10),
               TextButton(
                 onPressed: () {
-                  // ignore: avoid_print
-                  print('Create Post button pressed');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const FormScreen()),
+                  );
                 },
                 style: ButtonStyle(
                   backgroundColor:
