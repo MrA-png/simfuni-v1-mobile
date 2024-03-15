@@ -76,7 +76,7 @@ class DetailkebutuhanoneItemWidget extends StatelessWidget {
               ],
             ),
           ),
-          Spacer(),
+          const Spacer(),
           CustomImageView(
             imagePath: ImageConstant.imgDownload03,
             height: 16.adaptSize,

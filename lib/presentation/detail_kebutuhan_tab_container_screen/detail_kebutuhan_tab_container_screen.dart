@@ -47,7 +47,7 @@ class DetailKebutuhanTabContainerScreenState
                         height: 622.v,
                         child: TabBarView(
                           controller: tabviewController,
-                          children: [
+                          children: const [
                             DetailKebutuhanPage(),
                             DetailKebutuhanOnePage(),
                           ],
@@ -102,7 +102,7 @@ class DetailKebutuhanTabContainerScreenState
                     text: "Tanggal Pembuatan",
                     style: CustomTextStyles.bodySmallPoppins66000000,
                   ),
-                  TextSpan(
+                  const TextSpan(
                     text: " ",
                   ),
                   TextSpan(
@@ -167,7 +167,7 @@ class DetailKebutuhanTabContainerScreenState
                           padding: EdgeInsets.only(left: 7.h),
                           child: Text(
                             "Status Tender",
-                            style: CustomTextStyles.labelSmallBluegray400,
+                            style: CustomTextStyles.labelSmallff888b90,
                           ),
                         ),
                         SizedBox(height: 1.v),
@@ -197,8 +197,8 @@ class DetailKebutuhanTabContainerScreenState
               children: [
                 CustomImageView(
                   imagePath: ImageConstant.imgEllipse104,
-                  height: 30.adaptSize,
-                  width: 30.adaptSize,
+                  height: 50.adaptSize,
+                  width: 50.adaptSize,
                   radius: BorderRadius.circular(
                     15.h,
                   ),
@@ -225,8 +225,8 @@ class DetailKebutuhanTabContainerScreenState
                         children: [
                           CustomImageView(
                             imagePath: ImageConstant.imgMarkerPin04,
-                            height: 9.adaptSize,
-                            width: 9.adaptSize,
+                            height: 14.adaptSize,
+                            width: 14.adaptSize,
                             margin: EdgeInsets.only(bottom: 2.v),
                           ),
                           Padding(
@@ -284,7 +284,7 @@ class DetailKebutuhanTabContainerScreenState
             5.h,
           ),
         ),
-        tabs: [
+        tabs: const [
           Tab(
             child: Text(
               "Deskripsi",

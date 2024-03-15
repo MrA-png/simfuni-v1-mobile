@@ -3,7 +3,7 @@ import 'package:simfuni_v1/core/app_export.dart';
 
 // ignore: must_be_immutable
 class AppbarLeadingImage extends StatelessWidget {
-  AppbarLeadingImage({
+  const AppbarLeadingImage({
     Key? key,
     this.imagePath,
     this.margin,
@@ -22,8 +22,8 @@ class AppbarLeadingImage extends StatelessWidget {
         padding: margin ?? EdgeInsets.zero,
         child: CustomImageView(
           imagePath: imagePath,
-          height: 24.adaptSize,
-          width: 24.adaptSize,
+          height: 40.adaptSize,
+          width: 40.adaptSize,
           fit: BoxFit.contain,
         ),
       ),

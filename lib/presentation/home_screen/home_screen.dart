@@ -38,32 +38,32 @@ class HomeScreen extends StatelessWidget {
                 Padding(
                     padding: EdgeInsets.only(top: 5.v, bottom: 4.v),
                     child: Text("Simfuni", style: theme.textTheme.titleLarge)),
-                Spacer(),
+                const Spacer(),
                 CustomImageView(
                     imagePath: ImageConstant.imgContrast,
-                    height: 18.v,
-                    width: 14.h,
-                    margin: EdgeInsets.symmetric(vertical: 8.v)),
+                    height: 40.v,
+                    width: 40.h,
+                    margin: EdgeInsets.symmetric(vertical: 5.v)),
                 Padding(
-                    padding: EdgeInsets.only(left: 27.h),
+                    padding: EdgeInsets.only(left: 10.h),
                     child: CustomIconButton(
-                        height: 34.adaptSize,
-                        width: 34.adaptSize,
-                        padding: EdgeInsets.all(8.h),
+                        height: 40.adaptSize,
+                        width: 40.adaptSize,
+                        padding: EdgeInsets.all(5.h),
                         decoration: IconButtonStyleHelper.fillBlueGray,
                         child: CustomImageView(
                             imagePath:
                                 ImageConstant.imgContrastBlueGray90001))),
                 CustomImageView(
                     imagePath: ImageConstant.imgContrastBlueGray10001,
-                    height: 18.adaptSize,
-                    width: 18.adaptSize,
-                    margin: EdgeInsets.only(left: 27.h, top: 8.v, bottom: 8.v)),
+                    height: 40.adaptSize,
+                    width: 40.adaptSize,
+                    margin: EdgeInsets.only(left: 10.h, top: 8.v, bottom: 8.v)),
                 CustomImageView(
                     imagePath: ImageConstant.imgPlay,
-                    height: 24.adaptSize,
-                    width: 24.adaptSize,
-                    margin: EdgeInsets.only(left: 27.h, top: 5.v, bottom: 5.v))
+                    height: 40.adaptSize,
+                    width: 40.adaptSize,
+                    margin: EdgeInsets.only(left: 10.h, top: 5.v, bottom: 5.v))
               ])),
           SizedBox(height: 15.v),
           Divider(color: appTheme.gray100),
@@ -75,10 +75,10 @@ class HomeScreen extends StatelessWidget {
                     hintText: "apa yang anda butuhkan atau tawarkan",
                     textInputAction: TextInputAction.done)),
             Padding(
-                padding: EdgeInsets.only(left: 9.h),
+                padding: EdgeInsets.only(left: 3.h),
                 child: CustomIconButton(
-                    height: 33.adaptSize,
-                    width: 33.adaptSize,
+                    height: 40.adaptSize,
+                    width: 40.adaptSize,
                     padding: EdgeInsets.all(4.h),
                     decoration: IconButtonStyleHelper.fillBlueGrayTL10,
                     child: CustomImageView(imagePath: ImageConstant.imgPlus)))
@@ -90,12 +90,12 @@ class HomeScreen extends StatelessWidget {
   Widget _buildHome(BuildContext context) {
     return Expanded(
         child: ListView.separated(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             shrinkWrap: true,
             separatorBuilder: (context, index) {
               return SizedBox(height: 5.v);
             },
-            itemCount: 2,
+            itemCount: 5,
             itemBuilder: (context, index) {
               return HomeItemWidget(onTapOpen: () {
                 onTapOpen(context);

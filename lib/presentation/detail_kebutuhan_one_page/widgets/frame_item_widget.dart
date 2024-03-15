@@ -12,8 +12,8 @@ class FrameItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomImageView(
       imagePath: ImageConstant.imgRectangle25,
-      height: 140.adaptSize,
-      width: 140.adaptSize,
+      height: 200.adaptSize,
+      width: 300.adaptSize,
       radius: BorderRadius.circular(
         5.h,
       ),

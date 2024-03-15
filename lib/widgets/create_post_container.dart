@@ -33,10 +33,10 @@ class CreatePostContainer extends StatelessWidget {
                     ),
                   ),
                   child: const SizedBox(
-                    height: 30,
+                    height: 40,
                     child: Row(
                       children: [
-                        SizedBox(width: 3),
+                        SizedBox(width: 5),
                         Text(
                           'apa yang anda butuhkan atau tawarkan',
                           style: TextStyle(color: Colors.grey),

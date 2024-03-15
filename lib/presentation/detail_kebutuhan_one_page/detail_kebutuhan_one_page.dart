@@ -110,7 +110,7 @@ class DetailKebutuhanOnePageState extends State<DetailKebutuhanOnePage>
         ),
         itemCount: 2,
         itemBuilder: (context, index, realIndex) {
-          return FrameItemWidget();
+          return const FrameItemWidget();
         },
       ),
     );
@@ -124,7 +124,7 @@ class DetailKebutuhanOnePageState extends State<DetailKebutuhanOnePage>
         borderRadius: BorderRadiusStyle.roundedBorder10,
       ),
       child: ListView.separated(
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         separatorBuilder: (
           context,
@@ -136,7 +136,7 @@ class DetailKebutuhanOnePageState extends State<DetailKebutuhanOnePage>
         },
         itemCount: 2,
         itemBuilder: (context, index) {
-          return DetailkebutuhanoneItemWidget();
+          return const DetailkebutuhanoneItemWidget();
         },
       ),
     );

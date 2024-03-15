@@ -15,7 +15,7 @@ class CustomTextStyles {
           fontWeight: FontWeight.normal);
   static get bodySmallPoppins66000000 =>
       theme.textTheme.bodySmall!.poppins.copyWith(
-        color: Color(0X66000000),
+        color: const Color(0X66000000),
         fontSize: 10.fSize,
       );
   static get bodySmallPoppinsBlack900 =>
@@ -26,16 +26,16 @@ class CustomTextStyles {
   static get bodySmallPoppinsBlack9008 =>
       theme.textTheme.bodySmall!.poppins.copyWith(
         color: appTheme.black900.withOpacity(0.8),
-        fontSize: 8.fSize,
+        fontSize: 10.fSize,
       );
   static get bodySmallPoppinsGray80099 =>
       theme.textTheme.bodySmall!.poppins.copyWith(
         color: appTheme.gray80099,
-        fontSize: 8.fSize,
+        fontSize: 12.fSize,
       );
   static get bodySmallPoppinsff000000 =>
       theme.textTheme.bodySmall!.poppins.copyWith(
-        color: Color(0XFF000000),
+        color: const Color(0XFF000000),
         fontSize: 10.fSize,
         fontWeight: FontWeight.w300,
       );
@@ -58,7 +58,8 @@ class CustomTextStyles {
         fontWeight: FontWeight.w500,
       );
   static get labelLargePoppins => theme.textTheme.labelLarge!.poppins.copyWith(
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w600,
+        fontSize: 14.fSize,
       );
   static get labelLargePoppinsWhiteA700 =>
       theme.textTheme.labelLarge!.poppins.copyWith(
@@ -68,12 +69,12 @@ class CustomTextStyles {
       );
   static get labelLargePoppinsff000000 =>
       theme.textTheme.labelLarge!.poppins.copyWith(
-        color: Color(0XFF000000),
+        color: const Color(0XFF000000),
         fontWeight: FontWeight.w500,
       );
   static get labelLargePoppinsff000000SemiBold =>
       theme.textTheme.labelLarge!.poppins.copyWith(
-        color: Color(0XFF000000),
+        color: const Color(0XFF000000),
         fontWeight: FontWeight.w600,
       );
   static get labelMediumBlack900 => theme.textTheme.labelMedium!.copyWith(
@@ -96,7 +97,7 @@ class CustomTextStyles {
         fontWeight: FontWeight.w700,
       );
   static get labelSmall7f000000 => theme.textTheme.labelSmall!.copyWith(
-        color: Color(0X7F000000),
+        color: const Color(0X7F000000),
       );
   static get labelSmallBlack900 => theme.textTheme.labelSmall!.copyWith(
         color: appTheme.black900,
@@ -104,17 +105,19 @@ class CustomTextStyles {
       );
   static get labelSmallBluegray400 => theme.textTheme.labelSmall!.copyWith(
         color: appTheme.blueGray400,
+        fontSize: 10.fSize,
       );
   static get labelSmallb2000000 => theme.textTheme.labelSmall!.copyWith(
-        color: Color(0XB2000000),
+        color: const Color(0XB2000000),
         fontWeight: FontWeight.w600,
       );
   static get labelSmallff888b90 => theme.textTheme.labelSmall!.copyWith(
-        color: Color(0XFF888B90),
+        color: const Color(0XFF888B90),
+        fontSize: 9.fSize,
       );
   // Lalezarff text style
   static get lalezarff156cf7 => TextStyle(
-        color: Color(0XFF156CF7),
+        color: const Color(0XFF156CF7),
         fontSize: 96.fSize,
         fontWeight: FontWeight.w400,
       ).lalezar;

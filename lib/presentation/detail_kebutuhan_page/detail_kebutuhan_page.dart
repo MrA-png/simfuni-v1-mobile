@@ -60,7 +60,7 @@ class DetailKebutuhanPageState extends State<DetailKebutuhanPage>
                               ),
                             ),
                             SizedBox(height: 9.v),
-                            Divider(),
+                            const Divider(),
                             SizedBox(height: 8.v),
                             Text(
                               "Lokasi Pengerjaan",
@@ -79,7 +79,7 @@ class DetailKebutuhanPageState extends State<DetailKebutuhanPage>
                               ),
                             ),
                             SizedBox(height: 9.v),
-                            Divider(),
+                            const Divider(),
                             SizedBox(height: 8.v),
                             Text(
                               "Requirements",
@@ -98,7 +98,7 @@ class DetailKebutuhanPageState extends State<DetailKebutuhanPage>
                               ),
                             ),
                             SizedBox(height: 8.v),
-                            Divider(),
+                            const Divider(),
                             SizedBox(height: 8.v),
                             Padding(
                               padding: EdgeInsets.only(right: 5.h),

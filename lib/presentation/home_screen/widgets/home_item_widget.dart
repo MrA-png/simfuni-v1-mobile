@@ -66,7 +66,7 @@ class HomeItemWidget extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     CustomElevatedButton(
                       height: 22.v,
                       width: 79.h,
@@ -84,7 +84,7 @@ class HomeItemWidget extends StatelessWidget {
             ),
             SizedBox(height: 7.v),
             Container(
-              height: 24.v,
+              height: 55.v,
               width: 299.h,
               margin: EdgeInsets.only(left: 20.h),
               child: Stack(
@@ -93,7 +93,7 @@ class HomeItemWidget extends StatelessWidget {
                   Align(
                     alignment: Alignment.center,
                     child: SizedBox(
-                      width: 299.h,
+                      width: 399.h,
                       child: Text(
                         "Dibutuhkan bahan baku kayu, aluminium, untuk digunakan sebagai bahan baku produk furniture kursi",
                         maxLines: 2,
@@ -102,20 +102,20 @@ class HomeItemWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.bottomLeft,
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 110.h),
-                      child: Text(
-                        "... lihat lainnya",
-                        style: CustomTextStyles.poppinsBlack900,
-                      ),
-                    ),
-                  ),
+                  // Align(
+                  //   alignment: Alignment.bottomLeft,
+                  //   child: Padding(
+                  //     padding: EdgeInsets.only(left: 110.h),
+                  //     child: Text(
+                  //       "... lihat lainnya",
+                  //       style: CustomTextStyles.poppinsBlack900,
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               ),
             ),
-            SizedBox(height: 7.v),
+            SizedBox(height: 15.v),
             CustomImageView(
               imagePath: ImageConstant.imgRectangle9,
               height: 209.v,

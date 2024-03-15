@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:simfuni_v1/presentation/splassh_screen/splashscreen.dart';
 import '../presentation/home_screen/home_screen.dart';
-import '../presentation/android_large_one_screen/android_large_one_screen.dart';
 import '../presentation/detail_kebutuhan_tab_container_screen/detail_kebutuhan_tab_container_screen.dart';
 import '../presentation/app_navigation_screen/app_navigation_screen.dart';
 
 class AppRoutes {
   static const String homeScreen = '/home_screen';
 
-  static const String androidLargeOneScreen = '/android_large_one_screen';
+  static const String splashscreen = '/splash_screen';
 
   static const String detailKebutuhanPage = '/detail_kebutuhan_page';
 
@@ -20,9 +20,9 @@ class AppRoutes {
 
   static Map<String, WidgetBuilder> routes = {
     homeScreen: (context) => HomeScreen(),
-    androidLargeOneScreen: (context) => AndroidLargeOneScreen(),
+    splashscreen: (context) => const SplashScreen(),
     detailKebutuhanTabContainerScreen: (context) =>
-        DetailKebutuhanTabContainerScreen(),
-    appNavigationScreen: (context) => AppNavigationScreen()
+        const DetailKebutuhanTabContainerScreen(),
+    appNavigationScreen: (context) => const AppNavigationScreen()
   };
 }
