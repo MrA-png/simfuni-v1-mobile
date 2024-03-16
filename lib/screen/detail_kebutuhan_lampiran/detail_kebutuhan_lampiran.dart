@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'widgets/frame_item_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'widgets/detailkebutuhanone_item_widget.dart';
+import 'widgets/detailkebutuhanlampiran_widget.dart';
 import 'package:simfuni_v1/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:simfuni_v1/core/app_export.dart';

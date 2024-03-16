@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:simfuni_v1/screen/detail_post.dart';
+import 'package:simfuni_v1/New Folder/screen/detail_post.dart';
 import 'package:simfuni_v1/widgets/widget.dart';
 
 class HomeScreen extends StatelessWidget {

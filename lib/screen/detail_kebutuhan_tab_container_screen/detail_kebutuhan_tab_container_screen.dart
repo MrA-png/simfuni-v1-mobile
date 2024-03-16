@@ -1,8 +1,8 @@
 import 'package:simfuni_v1/widgets/app_bar/custom_app_bar.dart';
 import 'package:simfuni_v1/widgets/app_bar/appbar_leading_image.dart';
 import 'package:simfuni_v1/widgets/app_bar/appbar_title.dart';
-import 'package:simfuni_v1/presentation/detail_kebutuhan_page/detail_kebutuhan_page.dart';
-import 'package:simfuni_v1/presentation/detail_kebutuhan_one_page/detail_kebutuhan_one_page.dart';
+import 'package:simfuni_v1/screen/detail_kebutuhan_deskripsi/detail_kebutuhan_deskripsi.dart';
+import 'package:simfuni_v1/screen/detail_kebutuhan_lampiran/detail_kebutuhan_lampiran.dart';
 import 'package:flutter/material.dart';
 import 'package:simfuni_v1/core/app_export.dart';
 

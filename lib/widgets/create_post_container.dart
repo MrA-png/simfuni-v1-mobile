@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:simfuni_v1/screen/form_post.dart';
+import 'package:simfuni_v1/New Folder/screen/form_post.dart';
 
 class CreatePostContainer extends StatelessWidget {
   const CreatePostContainer({Key? key}) : super(key: key);

@@ -1,5 +1,4 @@
 import 'package:simfuni_v1/widgets/custom_icon_button.dart';
-import 'package:simfuni_v1/widgets/custom_text_form_field.dart';
 import 'widgets/home_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:simfuni_v1/core/app_export.dart';
@@ -13,15 +12,20 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
-            resizeToAvoidBottomInset: false,
-            body: SizedBox(
-                width: double.maxFinite,
-                child: Column(children: [
-                  _buildFrame(context),
-                  SizedBox(height: 5.v),
-                  _buildHome(context)
-                ]))));
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: SizedBox(
+          width: double.maxFinite,
+          child: Column(
+            children: [
+              _buildFrame(context),
+              SizedBox(height: 5.v),
+              _buildHome(context)
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   /// Section Widget
@@ -70,18 +74,40 @@ class HomeScreen extends StatelessWidget {
           SizedBox(height: 14.v),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             Expanded(
-                child: CustomTextFormField(
-                    controller: threeController,
-                    hintText: "apa yang anda butuhkan atau tawarkan",
-                    textInputAction: TextInputAction.done)),
+              child: TextButton(
+                onPressed: () {},
+                child: Container(
+                  alignment: Alignment.centerLeft,
+                  padding:
+                      EdgeInsets.symmetric(vertical: 10.v, horizontal: 12.h),
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    borderRadius: BorderRadius.circular(10.h),
+                    border: Border.all(
+                      color: appTheme.gray100,
+                      width: 1.h,
+                    ),
+                  ),
+                  child: Text(
+                    "apa yang anda butuhkan atau tawarkan",
+                    style: TextStyle(
+                      color: Colors.grey[400],
+                      fontSize: 14.fSize,
+                    ),
+                  ),
+                ),
+              ),
+            ),
             Padding(
-                padding: EdgeInsets.only(left: 3.h),
-                child: CustomIconButton(
-                    height: 40.adaptSize,
-                    width: 40.adaptSize,
-                    padding: EdgeInsets.all(4.h),
-                    decoration: IconButtonStyleHelper.fillBlueGrayTL10,
-                    child: CustomImageView(imagePath: ImageConstant.imgPlus)))
+              padding: EdgeInsets.only(left: 3.h),
+              child: CustomIconButton(
+                height: 40.adaptSize,
+                width: 40.adaptSize,
+                padding: EdgeInsets.all(4.h),
+                decoration: IconButtonStyleHelper.fillBlueGrayTL10,
+                child: CustomImageView(imagePath: ImageConstant.imgPlus),
+              ),
+            )
           ])
         ]));
   }

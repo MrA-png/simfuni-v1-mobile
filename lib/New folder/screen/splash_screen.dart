@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:simfuni_v1/screen/home_screen.dart';
+import 'package:simfuni_v1/New Folder/screen/home_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
