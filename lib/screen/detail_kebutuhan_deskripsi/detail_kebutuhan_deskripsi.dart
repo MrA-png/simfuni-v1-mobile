@@ -127,6 +127,12 @@ class DetailKebutuhanPageState extends State<DetailKebutuhanPage>
                       SizedBox(height: 26.v),
                       CustomElevatedButton(
                         text: "Apply",
+                        buttonStyle: CustomButtonStyles.outlineBlack,
+                        buttonTextStyle:
+                            CustomTextStyles.labelLargePoppinsWhiteA700,
+                        onPressed: () {
+                          onTapApply(context);
+                        },
                       ),
                     ],
                   ),
@@ -137,5 +143,9 @@ class DetailKebutuhanPageState extends State<DetailKebutuhanPage>
         ),
       ),
     );
+  }
+
+  onTapApply(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.step1FormApplyScreen);
   }
 }

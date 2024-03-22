@@ -90,6 +90,7 @@ class DetailKebutuhanTabContainerScreenState
             centerTitle: true,
             title: AppbarTitle(
               text: "Detail Kebutuhan",
+              style: const TextStyle(fontSize: 8),
             ),
           ),
           SizedBox(height: 19.v),

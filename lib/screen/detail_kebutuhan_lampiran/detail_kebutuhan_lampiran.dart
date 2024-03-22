@@ -76,8 +76,13 @@ class DetailKebutuhanOnePageState extends State<DetailKebutuhanOnePage>
                       _buildDetailkebutuhanOne(context),
                       SizedBox(height: 189.v),
                       CustomElevatedButton(
-                        text: "Apply",
-                      ),
+                          text: "Apply",
+                          buttonStyle: CustomButtonStyles.outlineBlack,
+                          buttonTextStyle:
+                              CustomTextStyles.labelLargePoppinsWhiteA700,
+                          onPressed: () {
+                            onTapApply(context);
+                          }),
                     ],
                   ),
                 ),
@@ -140,5 +145,9 @@ class DetailKebutuhanOnePageState extends State<DetailKebutuhanOnePage>
         },
       ),
     );
+  }
+
+  onTapApply(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.step1FormApplyScreen);
   }
 }

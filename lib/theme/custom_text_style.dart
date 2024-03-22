@@ -111,10 +111,62 @@ class CustomTextStyles {
         color: const Color(0XB2000000),
         fontWeight: FontWeight.w600,
       );
+  static get labelMediumBlue100 => theme.textTheme.labelMedium!.copyWith(
+        color: appTheme.blue100,
+      );
+  static get labelLargeIstokWebGray500 =>
+      theme.textTheme.labelLarge!.istokWeb.copyWith(
+        color: appTheme.gray500,
+        fontWeight: FontWeight.w700,
+      );
+  static get titleSmallInterBlack900 =>
+      theme.textTheme.titleSmall!.inter.copyWith(
+        color: appTheme.black900.withOpacity(0.8),
+      );
+  static get titleSmallInterBluegray10004 =>
+      theme.textTheme.titleSmall!.inter.copyWith(
+        color: appTheme.blueGray10004,
+        fontWeight: FontWeight.w500,
+      );
+  static get labelMediumGray80001 => theme.textTheme.labelMedium!.copyWith(
+        color: appTheme.gray80001,
+      );
   static get labelSmallff888b90 => theme.textTheme.labelSmall!.copyWith(
         color: const Color(0XFF888B90),
         fontSize: 9.fSize,
       );
+  static get labelMediumInter => theme.textTheme.labelMedium!.inter;
+  static get titleSmallInter => theme.textTheme.titleSmall!.inter;
+  static get titleSmallInterBluegray10001 =>
+      theme.textTheme.titleSmall!.inter.copyWith(
+        color: appTheme.blueGray10001,
+        fontWeight: FontWeight.w500,
+      );
+  static get titleSmallInterBluegray900 =>
+      theme.textTheme.titleSmall!.inter.copyWith(
+        color: appTheme.blueGray900,
+      );
+  static get titleSmallInterff156cf7 =>
+      theme.textTheme.titleSmall!.inter.copyWith(
+        color: Color(0XFF156CF7),
+      );
+  static get titleSmallInterff282a37 =>
+      theme.textTheme.titleSmall!.inter.copyWith(
+        color: Color(0XFF282A37),
+      );
+  static get titleSmallBluegray10001 => theme.textTheme.titleSmall!.copyWith(
+        color: appTheme.blueGray10001,
+        fontWeight: FontWeight.w500,
+      );
+  static get titleSmallPrimary => theme.textTheme.titleSmall!.copyWith(
+        color: theme.colorScheme.primary,
+        fontWeight: FontWeight.w500,
+      );
+  static get titleSmallBlack900 => theme.textTheme.titleSmall!.copyWith(
+        color: appTheme.black900.withOpacity(0.8),
+        fontWeight: FontWeight.w500,
+      );
+
   // Lalezarff text style
   static get lalezarff156cf7 => TextStyle(
         color: const Color(0XFF156CF7),

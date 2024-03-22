@@ -12,12 +12,22 @@ class AppDecoration {
   static BoxDecoration get fillOnPrimary => BoxDecoration(
         color: theme.colorScheme.onPrimary,
       );
+  static BoxDecoration get fillPrimary => BoxDecoration(
+        color: theme.colorScheme.primary,
+      );
+  static get labelMediumBlue100 => theme.textTheme.labelMedium!.copyWith(
+        color: appTheme.blue100,
+      );
   static BoxDecoration get fillOnPrimaryContainer => BoxDecoration(
         color: theme.colorScheme.onPrimaryContainer,
       );
   static BoxDecoration get fillWhiteA => BoxDecoration(
         color: appTheme.whiteA700,
       );
+  static BoxDecoration get fillGray200 => BoxDecoration(
+        color: appTheme.gray200,
+      );
+  static BoxDecoration get outlineBlueGray => BoxDecoration();
 }
 
 class BorderRadiusStyle {

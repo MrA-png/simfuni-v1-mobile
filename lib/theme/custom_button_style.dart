@@ -21,4 +21,13 @@ class CustomButtonStyles {
         backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
         elevation: MaterialStateProperty.all<double>(0),
       );
+
+  static ButtonStyle get outlineBlack => ElevatedButton.styleFrom(
+        backgroundColor: theme.colorScheme.primary,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.h),
+        ),
+        shadowColor: appTheme.black900.withOpacity(0.2),
+        elevation: 2,
+      );
 }

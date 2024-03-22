@@ -43,4 +43,8 @@ class ImageConstant {
   static String imgEllipse104 = '$imagePath/img_ellipse_104.png';
 
   static String imageNotFound = 'assets/images/image_not_found.png';
+
+  static String imgPaperUpload = '$imagePath/img_paper_upload.svg';
+
+  static String imgIcon24 = '$imagePath/img_icon_24.svg';
 }

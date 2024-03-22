@@ -129,3 +129,19 @@ class CustomTextFormField extends StatelessWidget {
             ),
       );
 }
+
+extension TextFormFieldStyleHelper on CustomTextFormField {
+  static OutlineInputBorder get fillBlueGray => OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10.h),
+        borderSide: BorderSide.none,
+      );
+  static OutlineInputBorder get fillBlue => OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10.h),
+        borderSide: BorderSide.none,
+      );
+  static UnderlineInputBorder get underLineBlue => UnderlineInputBorder(
+        borderSide: BorderSide(
+          color: appTheme.blue200,
+        ),
+      );
+}

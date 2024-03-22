@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:simfuni_v1/core/app_export.dart';
 
 // ignore: must_be_immutable
-class AppbarTitle extends StatelessWidget {
-  AppbarTitle({
+class AppbarSubtitleFour extends StatelessWidget {
+  AppbarSubtitleFour({
     Key? key,
     required this.text,
     this.margin,
     this.onTap,
-    this.fontSize, required TextStyle style,
   }) : super(
           key: key,
         );
@@ -19,21 +18,24 @@ class AppbarTitle extends StatelessWidget {
 
   Function? onTap;
 
-  double? fontSize;
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      // onTap: () {
-      //   onTap!.call();
-      // },
+      onTap: () {
+        onTap!.call();
+      },
       child: Padding(
         padding: margin ?? EdgeInsets.zero,
-        child: Text(
-          text,
-          style: TextStyle(
-            color: appTheme.black900,
-            fontSize: fontSize,
+        child: Container(
+          width: 203.h,
+          decoration: AppDecoration.fillPrimary.copyWith(
+            borderRadius: BorderRadiusStyle.roundedBorder5,
+          ),
+          child: Text(
+            text,
+            style: CustomTextStyles.labelMediumBlue100.copyWith(
+              color: appTheme.blue100,
+            ),
           ),
         ),
       ),
