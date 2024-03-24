@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../core/app_export.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  CustomTextFormField({
+  const CustomTextFormField({
     Key? key,
     this.alignment,
     this.width,
@@ -131,10 +131,6 @@ class CustomTextFormField extends StatelessWidget {
 }
 
 extension TextFormFieldStyleHelper on CustomTextFormField {
-  static OutlineInputBorder get fillBlueGray => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10.h),
-        borderSide: BorderSide.none,
-      );
   static OutlineInputBorder get fillBlue => OutlineInputBorder(
         borderRadius: BorderRadius.circular(10.h),
         borderSide: BorderSide.none,

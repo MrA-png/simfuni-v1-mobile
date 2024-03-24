@@ -26,6 +26,12 @@ class ImageConstant {
 
   static String imgMarkerPin04 = '$imagePath/img_marker_pin_04.svg';
 
+// Step 1 - form permintaan images
+  static String imgSettingsOnerrorcontainer =
+      '$imagePath/img_settings_onerrorcontainer.svg';
+
+  static String imgPlusCircle = '$imagePath/img_plus_circle.svg';
+
   // Detail kebutuhan One images
   static String imgSettings = '$imagePath/img_settings.svg';
 

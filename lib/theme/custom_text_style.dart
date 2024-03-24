@@ -165,6 +165,10 @@ class CustomTextStyles {
         color: theme.colorScheme.primary,
         fontWeight: FontWeight.w500,
       );
+  static get labelLargeOnPrimaryContainer =>
+      theme.textTheme.labelLarge!.copyWith(
+        color: theme.colorScheme.onPrimaryContainer,
+      );
   static get titleSmallBlack900 => theme.textTheme.titleSmall!.copyWith(
         color: appTheme.black900.withOpacity(0.8),
         fontWeight: FontWeight.w500,
@@ -190,6 +194,14 @@ class CustomTextStyles {
         fontWeight: FontWeight.w300,
       );
 
+  static OutlineInputBorder get fillBlueTL10 => OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10.h),
+        borderSide: BorderSide.none,
+      );
+  static get labelMediumBlack900Medium => theme.textTheme.labelMedium!.copyWith(
+        color: appTheme.black900.withOpacity(0.8),
+        fontWeight: FontWeight.w500,
+      );
   // Lalezarff text style
   static get lalezarff156cf7 => TextStyle(
         color: const Color(0XFF156CF7),

@@ -117,7 +117,7 @@ class PengajuanScreen extends StatelessWidget {
             buttonTextStyle:
                 CustomTextStyles.labelLargePoppinsOnErrorContainerSemiBold,
             onPressed: () {
-              // onTapAjukanPermintaan(context);
+              onTapAjukanPermintaan(context);
             },
           )
         ],
@@ -193,9 +193,9 @@ class PengajuanScreen extends StatelessWidget {
   }
 
   /// Navigates to the step1FormPermintaanScreen when the action is triggered.
-  // onTapAjukanPermintaan(BuildContext context) {
-  //   Navigator.pushNamed(context, AppRoutes.step1FormPermintaanScreen);
-  // }
+  onTapAjukanPermintaan(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.step1FormPermintaanScreen);
+  }
 
   /// Navigates to the step1FormPenawaranScreen when the action is triggered.
   onTapAjukanPenawaran(BuildContext context) {
