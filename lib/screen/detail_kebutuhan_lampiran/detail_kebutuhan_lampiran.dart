@@ -31,50 +31,52 @@ class DetailKebutuhanOnePageState extends State<DetailKebutuhanOnePage>
         body: SizedBox(
           width: SizeUtils.width,
           child: SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(height: 29.v),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.h),
-                  child: Column(
-                    children: [
-                      CustomImageView(
-                        imagePath: ImageConstant.imgSettings,
-                        height: 8.v,
-                        width: 24.h,
-                        alignment: Alignment.centerLeft,
-                        margin: EdgeInsets.only(left: 18.h),
-                      ),
-                      SizedBox(height: 7.v),
-                      _buildFrame(context),
-                      SizedBox(height: 13.v),
-                      SizedBox(
-                        height: 8.v,
-                        child: AnimatedSmoothIndicator(
-                          activeIndex: sliderIndex,
-                          count: 2,
-                          axisDirection: Axis.horizontal,
-                          effect: ScrollingDotsEffect(
-                            spacing: 9,
-                            activeDotColor:
-                                theme.colorScheme.secondaryContainer,
-                            dotColor: appTheme.gray300,
-                            dotHeight: 8.v,
-                            dotWidth: 8.h,
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 22.v),
-                      CustomImageView(
-                        imagePath: ImageConstant.imgDocumentLampiran,
-                        height: 10.v,
-                        width: 112.h,
-                        alignment: Alignment.centerLeft,
-                        margin: EdgeInsets.only(left: 18.h),
-                      ),
-                      SizedBox(height: 7.v),
-                      _buildDetailkebutuhanOne(context),
-                      SizedBox(height: 189.v),
+                    child: Column(children: [
+                  SizedBox(height: 8.v),
+                  Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20.h),
+                      child: Column(children: [
+                        Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 18.h, vertical: 21.v),
+                            decoration: AppDecoration.fillOnErrorContainer
+                                .copyWith(
+                                    borderRadius:
+                                        BorderRadiusStyle.roundedBorder10),
+                            child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  CustomImageView(
+                                      imagePath: ImageConstant.imgSettings,
+                                      height: 8.v,
+                                      alignment: Alignment.centerLeft),
+                                  SizedBox(height: 7.v),
+                                  _buildFrame(context),
+                                  SizedBox(height: 13.v),
+                                  SizedBox(
+                                      height: 8.v,
+                                      child: AnimatedSmoothIndicator(
+                                          activeIndex: sliderIndex,
+                                          count: 2,
+                                          axisDirection: Axis.horizontal,
+                                          effect: ScrollingDotsEffect(
+                                              spacing: 9,
+                                              activeDotColor: theme.colorScheme
+                                                  .secondaryContainer,
+                                              dotColor: appTheme.gray300,
+                                              dotHeight: 8.v,
+                                              dotWidth: 8.h))),
+                                  SizedBox(height: 22.v),
+                                  CustomImageView(
+                                      imagePath:
+                                          ImageConstant.imgDocumentLampiran,
+                                      height: 10.v,
+                                      alignment: Alignment.centerLeft),
+                                  SizedBox(height: 5.v),
+                                  _buildDetailkebutuhanOne(context),
+                                  SizedBox(height: 5.v)
+                                ])),
+                        SizedBox(height: 26.v),
                       CustomElevatedButton(
                           text: "Apply",
                           buttonStyle: CustomButtonStyles.outlineBlack,

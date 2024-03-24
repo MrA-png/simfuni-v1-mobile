@@ -51,8 +51,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         SizeUtils.width,
         height ?? 40.v,
       );
+  // ignore: unused_element
   _getStyle() {
     switch (styleType) {
+      case Style.bgFill_1:
+        return Container(
+          height: 71.v,
+          width: double.maxFinite,
+          decoration: BoxDecoration(
+            color: theme.colorScheme.onErrorContainer,
+          ),
+        );
       case Style.bgFill:
         return Container(
           height: 45.v,
@@ -76,5 +85,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 enum Style {
+  bgFill_1,
   bgFill,
 }

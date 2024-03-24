@@ -31,85 +31,88 @@ class HomeScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildFrame(BuildContext context) {
     return Container(
-        margin: EdgeInsets.only(right: 1.h),
-        padding: EdgeInsets.symmetric(horizontal: 19.h, vertical: 15.v),
-        decoration: AppDecoration.fillWhiteA,
-        child: Column(children: [
-          Padding(
-              padding: EdgeInsets.only(right: 3.h),
-              child:
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Padding(
-                    padding: EdgeInsets.only(top: 5.v, bottom: 4.v),
-                    child: Text("Simfuni", style: theme.textTheme.titleLarge)),
-                const Spacer(),
-                CustomImageView(
-                    imagePath: ImageConstant.imgContrast,
-                    height: 40.v,
-                    width: 40.h,
-                    margin: EdgeInsets.symmetric(vertical: 5.v)),
-                Padding(
-                    padding: EdgeInsets.only(left: 10.h),
-                    child: CustomIconButton(
-                        height: 40.adaptSize,
-                        width: 40.adaptSize,
-                        padding: EdgeInsets.all(5.h),
-                        decoration: IconButtonStyleHelper.fillBlueGray,
-                        child: CustomImageView(
-                            imagePath:
-                                ImageConstant.imgContrastBlueGray90001))),
-                CustomImageView(
-                    imagePath: ImageConstant.imgContrastBlueGray10001,
-                    height: 40.adaptSize,
-                    width: 40.adaptSize,
-                    margin: EdgeInsets.only(left: 10.h, top: 8.v, bottom: 8.v)),
-                CustomImageView(
-                    imagePath: ImageConstant.imgPlay,
-                    height: 40.adaptSize,
-                    width: 40.adaptSize,
-                    margin: EdgeInsets.only(left: 10.h, top: 5.v, bottom: 5.v))
-              ])),
-          SizedBox(height: 15.v),
-          Divider(color: appTheme.gray100),
-          SizedBox(height: 14.v),
-          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Expanded(
-              child: TextButton(
-                onPressed: () {},
-                child: Container(
-                  alignment: Alignment.centerLeft,
-                  padding:
-                      EdgeInsets.symmetric(vertical: 10.v, horizontal: 12.h),
-                  decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    borderRadius: BorderRadius.circular(10.h),
-                    border: Border.all(
-                      color: appTheme.gray100,
-                      width: 1.h,
-                    ),
+      margin: EdgeInsets.only(right: 1.h),
+      padding: EdgeInsets.symmetric(horizontal: 19.h, vertical: 15.v),
+      decoration: AppDecoration.fillWhiteA,
+      child: Column(children: [
+        Padding(
+            padding: EdgeInsets.only(right: 3.h),
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Padding(
+                  padding: EdgeInsets.only(top: 5.v, bottom: 4.v),
+                  child: Text("Simfuni", style: theme.textTheme.titleLarge)),
+              const Spacer(),
+              CustomImageView(
+                  imagePath: ImageConstant.imgContrast,
+                  height: 40.v,
+                  width: 40.h,
+                  margin: EdgeInsets.symmetric(vertical: 5.v)),
+              Padding(
+                  padding: EdgeInsets.only(left: 10.h),
+                  child: CustomIconButton(
+                      height: 40.adaptSize,
+                      width: 40.adaptSize,
+                      padding: EdgeInsets.all(5.h),
+                      decoration: IconButtonStyleHelper.fillBlueGray,
+                      child: CustomImageView(
+                          imagePath: ImageConstant.imgContrastBlueGray90001))),
+              CustomImageView(
+                  imagePath: ImageConstant.imgContrastBlueGray10001,
+                  height: 40.adaptSize,
+                  width: 40.adaptSize,
+                  margin: EdgeInsets.only(left: 10.h, top: 8.v, bottom: 8.v)),
+              CustomImageView(
+                  imagePath: ImageConstant.imgPlay,
+                  height: 40.adaptSize,
+                  width: 40.adaptSize,
+                  margin: EdgeInsets.only(left: 10.h, top: 5.v, bottom: 5.v))
+            ])),
+        SizedBox(height: 15.v),
+        Divider(color: appTheme.gray100),
+        SizedBox(height: 14.v),
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Expanded(
+            child: TextButton(
+              onPressed: () {
+                onTapBtnPlus(context);
+              },
+              child: Container(
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.symmetric(vertical: 10.v, horizontal: 12.h),
+                decoration: BoxDecoration(
+                  color: Colors.grey[200],
+                  borderRadius: BorderRadius.circular(10.h),
+                  border: Border.all(
+                    color: appTheme.gray100,
+                    width: 1.h,
                   ),
-                  child: Text(
-                    "apa yang anda butuhkan atau tawarkan",
-                    style: TextStyle(
-                      color: Colors.grey[400],
-                      fontSize: 14.fSize,
-                    ),
+                ),
+                child: Text(
+                  "apa yang anda butuhkan atau tawarkan",
+                  style: TextStyle(
+                    color: Colors.grey[400],
+                    fontSize: 14.fSize,
                   ),
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(left: 3.h),
-              child: CustomIconButton(
-                height: 40.adaptSize,
-                width: 40.adaptSize,
-                padding: EdgeInsets.all(4.h),
-                decoration: IconButtonStyleHelper.fillBlueGrayTL10,
-                child: CustomImageView(imagePath: ImageConstant.imgPlus),
-              ),
-            )
-          ])
-        ]));
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 9.h),
+            child: CustomIconButton(
+              height: 33.adaptSize,
+              width: 33.adaptSize,
+              padding: EdgeInsets.all(4.h),
+              decoration: IconButtonStyleHelper.fillBlueGray,
+              onTap: () {
+                onTapBtnPlus(context);
+              },
+              child: CustomImageView(imagePath: ImageConstant.imgPlus),
+            ),
+          ),
+        ])
+      ]),
+    );
   }
 
   /// Section Widget
@@ -132,5 +135,9 @@ class HomeScreen extends StatelessWidget {
   /// Navigates to the detailKebutuhanTabContainerScreen when the action is triggered.
   onTapOpen(BuildContext context) {
     Navigator.pushNamed(context, AppRoutes.detailKebutuhanTabContainerScreen);
+  }
+
+  onTapBtnPlus(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.pengajuanScreen);
   }
 }

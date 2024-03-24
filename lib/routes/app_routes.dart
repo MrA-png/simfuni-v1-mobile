@@ -5,6 +5,8 @@ import 'package:simfuni_v1/screen/step_2_form_permintaan_one_screen/step_2_form_
 import '../screen/home_screen/home_screen.dart';
 import '../screen/detail_kebutuhan_tab_container_screen/detail_kebutuhan_tab_container_screen.dart';
 import '../screen/app_navigation_screen/app_navigation_screen.dart';
+import '../screen/pengajuan_screen/pengajuan_screen.dart';
+
 
 class AppRoutes {
   static const String homeScreen = '/home_screen';
@@ -15,6 +17,8 @@ class AppRoutes {
 
   static const String detailKebutuhanTabContainerScreen =
       '/detail_kebutuhan_tab_container_screen';
+
+  static const String pengajuanScreen = '/pengajuan_screen';
 
   static const String detailKebutuhanOnePage = '/detail_kebutuhan_one_page';
 
@@ -36,6 +40,7 @@ class AppRoutes {
     appNavigationScreen: (context) => const AppNavigationScreen(),
     step1FormApplyScreen: (context) => Step1FormApplyScreen(),
     step2FormPenawaranScreen: (context) => const Step2FormPermintaanOneScreen(),
+    pengajuanScreen: (context) => const PengajuanScreen(),
     // pestep3FormPenawaranScreen: (context) => Pestep3FormPenawaranScreen(),
     // step1FormApplyScreen: (context) => Step1FormApplyScreen(),
     // step2FormPermintaanOneScreen: (context) => Step2FormPermintaanOneScreen(),

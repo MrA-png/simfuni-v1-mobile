@@ -27,7 +27,10 @@ class AppDecoration {
   static BoxDecoration get fillGray200 => BoxDecoration(
         color: appTheme.gray200,
       );
-  static BoxDecoration get outlineBlueGray => BoxDecoration();
+  static BoxDecoration get fillOnErrorContainer => BoxDecoration(
+        color: theme.colorScheme.onErrorContainer,
+      );
+  static BoxDecoration get outlineBlueGray => const BoxDecoration();
 }
 
 class BorderRadiusStyle {
