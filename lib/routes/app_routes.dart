@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:simfuni_v1/screen/form_penawaran/step_1_form_penawaran_screen/step_1_form_penawaran_screen.dart';
 import 'package:simfuni_v1/screen/splassh_screen/splashscreen.dart';
-import 'package:simfuni_v1/screen/step_1_form_apply_screen/step_1_form_apply_screen.dart';
-import 'package:simfuni_v1/screen/step_2_form_permintaan_one_screen/step_2_form_permintaan_one_screen.dart';
+import 'package:simfuni_v1/screen/form_apply/step_1_form_apply_screen/step_1_form_apply_screen.dart';
+import 'package:simfuni_v1/screen/form_apply/step_2_form_permintaan_one_screen/step_2_form_permintaan_one_screen.dart';
 import '../screen/home_screen/home_screen.dart';
 import '../screen/detail_kebutuhan_tab_container_screen/detail_kebutuhan_tab_container_screen.dart';
 import '../screen/app_navigation_screen/app_navigation_screen.dart';
 import '../screen/pengajuan_screen/pengajuan_screen.dart';
-import '../screen/step_2_form_permintaan_screen/step_2_form_permintaan_screen.dart';
-import '../screen/step_1_form_permintaan_screen/step_1_form_permintaan_screen.dart';
-import '../screen/step_3_form_permintaan_screen/step_3_form_permintaan_screen.dart';
-import '../screen/step_1_form_penawaran_screen/step_1_form_penawaran_screen.dart';
-import '../screen/step_2_form_penawaran_screen/step_2_form_penawaran_screen.dart';
-import '../screen/step_3_form_penawaran_screen/step_3_form_penawaran_screen.dart';
+import '../screen/form_permintaan/step_2_form_permintaan_screen/step_2_form_permintaan_screen.dart';
+import '../screen/form_permintaan/step_1_form_permintaan_screen/step_1_form_permintaan_screen.dart';
+import '../screen/form_permintaan/step_3_form_permintaan_screen/step_3_form_permintaan_screen.dart';
+import '../screen/form_penawaran/step_2_form_penawaran_screen/step_2_form_penawaran_screen.dart';
+import '../screen/form_penawaran/step_3_form_penawaran_screen/step_3_form_penawaran_screen.dart';
 
 
 class AppRoutes {
