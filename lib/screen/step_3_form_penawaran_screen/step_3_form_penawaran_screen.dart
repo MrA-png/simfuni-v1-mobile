@@ -1,3 +1,4 @@
+import 'package:simfuni_v1/widgets/app_bar/appbar_subtitle.dart';
 import 'package:simfuni_v1/widgets/app_bar/custom_app_bar.dart';
 import 'package:simfuni_v1/widgets/app_bar/appbar_leading_image.dart';
 import 'package:simfuni_v1/widgets/app_bar/appbar_title.dart';
@@ -17,7 +18,13 @@ class Step3FormPenawaranScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: theme.colorScheme.onErrorContainer,
-        appBar: _buildAppBar(context),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(kToolbarHeight),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: _buildAppBar(context),
+          ),
+        ),
         body: Container(
           width: double.maxFinite,
           padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 10.v),
@@ -50,21 +57,17 @@ class Step3FormPenawaranScreen extends StatelessWidget {
       leadingWidth: 49.h,
       leading: AppbarLeadingImage(
           imagePath: ImageConstant.imgFloatingIcon,
-          margin: EdgeInsets.only(left: 25.h, top: 5.v, bottom: 26.v),
           onTap: () {
             onTapFloatingIcon(context);
           }),
       centerTitle: true,
       title: Column(
         children: [
-          AppbarTitle(
-            text: "Form Pengajuan Penawaran ",
-            style: const TextStyle(fontSize: 20),
-          ),
-          SizedBox(height: 5.v),
+          AppbarSubtitle(text: "Form Pengajuan Penawaran"),
+          SizedBox(height: 6.v),
           AppbarSubtitleThree(
             text: "Step 3",
-            margin: EdgeInsets.only(left: 79.h, right: 92.h),
+            margin: EdgeInsets.only(left: 87.h, right: 88.h),
           ),
         ],
       ),
@@ -220,6 +223,9 @@ class Step3FormPenawaranScreen extends StatelessWidget {
           child: CustomElevatedButton(
             text: "Kirim",
             margin: EdgeInsets.only(left: 10.h),
+            onPressed: () {
+              onTapKirim(context);
+            },
           ),
         ),
       ],
@@ -234,5 +240,9 @@ class Step3FormPenawaranScreen extends StatelessWidget {
   /// Navigates to the step2FormPenawaranScreen when the action is triggered.
   onTapCancel(BuildContext context) {
     Navigator.pushNamed(context, AppRoutes.step2FormPenawaranScreen);
+  }
+
+  onTapKirim(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.homeScreen);
   }
 }

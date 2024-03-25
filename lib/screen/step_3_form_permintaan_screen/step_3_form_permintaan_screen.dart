@@ -1,3 +1,4 @@
+import 'package:simfuni_v1/widgets/app_bar/appbar_subtitle.dart';
 import 'package:simfuni_v1/widgets/app_bar/custom_app_bar.dart';
 import 'package:simfuni_v1/widgets/app_bar/appbar_leading_image.dart';
 import 'package:simfuni_v1/widgets/app_bar/appbar_title.dart';
@@ -17,16 +18,25 @@ class Step3FormPermintaanScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: theme.colorScheme.onErrorContainer,
-        appBar: _buildAppBar(context),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(kToolbarHeight),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: _buildAppBar(context),
+          ),
+        ),
         body: Container(
           width: double.maxFinite,
           padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 11.v),
           child: Column(
             children: [
               Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text("Lampiran Pendukung",
-                      style: CustomTextStyles.titleSmallInter)),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Lampiran Pendukung",
+                  style: CustomTextStyles.titleSmallInter,
+                ),
+              ),
               SizedBox(height: 14.v),
               _buildUpload(context),
               SizedBox(height: 34.v),
@@ -47,17 +57,13 @@ class Step3FormPermintaanScreen extends StatelessWidget {
       leadingWidth: 49.h,
       leading: AppbarLeadingImage(
           imagePath: ImageConstant.imgFloatingIcon,
-          margin: EdgeInsets.only(left: 25.h, top: 5.v, bottom: 26.v),
           onTap: () {
             onTapFloatingIcon(context);
           }),
       centerTitle: true,
       title: Column(
         children: [
-          AppbarTitle(
-            text: "Form Pengajuan Permintaan ",
-            style: const TextStyle(fontSize: 20),
-          ),
+          AppbarSubtitle(text: "Form Pengajuan Permintaan"),
           SizedBox(height: 4.v),
           AppbarSubtitleThree(
             text: "Step 3",
@@ -195,6 +201,9 @@ class Step3FormPermintaanScreen extends StatelessWidget {
           child: CustomElevatedButton(
             text: "Kirim",
             margin: EdgeInsets.only(left: 10.h),
+            onPressed: () {
+              onTapKirim(context);
+            },
           ),
         ),
       ],
@@ -209,5 +218,9 @@ class Step3FormPermintaanScreen extends StatelessWidget {
   /// Navigates to the step2FormPermintaanOneScreen when the action is triggered.
   onTapCancel(BuildContext context) {
     Navigator.pushNamed(context, AppRoutes.step2FormPermintaanOneScreen);
+  }
+
+  onTapKirim(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.homeScreen);
   }
 }

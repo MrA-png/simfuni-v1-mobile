@@ -168,6 +168,6 @@ class Step1FormApplyScreen extends StatelessWidget {
 
   /// Navigates to the step2FormPermintaanOneScreen when the action is triggered.
   onTapLanjutkan(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.step2FormPenawaranScreen);
+    Navigator.pushNamed(context, AppRoutes.step2FormPermintaanOneScreen);
   }
 }

@@ -21,8 +21,7 @@ class AppRoutes {
 
   static const String detailKebutuhanPage = '/detail_kebutuhan_page';
 
-  static const String detailKebutuhanTabContainerScreen =
-      '/detail_kebutuhan_tab_container_screen';
+  static const String detailKebutuhanTabContainerScreen = '/detail_kebutuhan_tab_container_screen';
 
   static const String pengajuanScreen = '/pengajuan_screen';
 
@@ -32,26 +31,19 @@ class AppRoutes {
 
   static const String step1FormApplyScreen = '/step_1_form_apply_screen';
 
-  static const String step2FormPermintaanScreen =
-      '/step_2_form_permintaan_screen';
+  static const String step2FormPermintaanScreen = '/step_2_form_permintaan_screen';
 
-  static const String step1FormPermintaanScreen =
-      '/step_1_form_permintaan_screen';
+  static const String step1FormPermintaanScreen = '/step_1_form_permintaan_screen';
 
-  static const String step2FormPermintaanOneScreen =
-      '/step_2_form_permintaan_one_screen';
+  static const String step2FormPermintaanOneScreen = '/step_2_form_permintaan_one_screen';
 
-  static const String step3FormPermintaanScreen =
-      '/step_3_form_permintaan_screen';
+  static const String step3FormPermintaanScreen = '/step_3_form_permintaan_screen';
 
-  static const String step1FormPenawaranScreen =
-      '/step_1_form_penawaran_screen';
+  static const String step1FormPenawaranScreen = '/step_1_form_penawaran_screen';
 
-  static const String step2FormPenawaranScreen =
-      '/step_2_form_penawaran_screen';
+  static const String step2FormPenawaranScreen = '/step_2_form_penawaran_screen';
 
-  static const String step3FormPenawaranScreen =
-      '/step_3_form_penawaran_screen';
+  static const String step3FormPenawaranScreen = '/step_3_form_penawaran_screen';
 
   static Map<String, WidgetBuilder> routes = {
     homeScreen: (context) => HomeScreen(),
@@ -60,7 +52,7 @@ class AppRoutes {
         const DetailKebutuhanTabContainerScreen(),
     appNavigationScreen: (context) => const AppNavigationScreen(),
     step1FormApplyScreen: (context) => Step1FormApplyScreen(),
-    step2FormPenawaranScreen: (context) => const Step2FormPermintaanOneScreen(),
+    step2FormPermintaanOneScreen: (context) => const Step2FormPermintaanOneScreen(),
     pengajuanScreen: (context) => const PengajuanScreen(),
     step2FormPermintaanScreen: (context) => const Step2FormPermintaanScreen(),
     step1FormPermintaanScreen: (context) => Step1FormPermintaanScreen(),

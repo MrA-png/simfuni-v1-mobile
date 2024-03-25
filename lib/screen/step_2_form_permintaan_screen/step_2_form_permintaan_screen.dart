@@ -17,7 +17,13 @@ class Step2FormPermintaanScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: theme.colorScheme.onErrorContainer,
-        appBar: _buildAppBar(context),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(kToolbarHeight),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: _buildAppBar(context),
+          ),
+        ),
         body: Container(
           width: double.maxFinite,
           padding: EdgeInsets.symmetric(horizontal: 18.h, vertical: 20.v),
@@ -55,7 +61,7 @@ class Step2FormPermintaanScreen extends StatelessWidget {
       leadingWidth: 49.h,
       leading: AppbarLeadingImage(
         imagePath: ImageConstant.imgFloatingIcon,
-        margin: EdgeInsets.only(left: 25.h, top: 5.v, bottom: 26.v),
+        // margin: EdgeInsets.only(left: 25.h, top: 5.v, bottom: 26.v),
         onTap: () {
           onTapFloatingIcon(context);
         },
@@ -305,16 +311,16 @@ class Step2FormPermintaanScreen extends StatelessWidget {
 
   /// Navigates to the step1FormApplyScreen when the action is triggered.
   onTapFloatingIcon(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.step1FormApplyScreen);
+    Navigator.pushNamed(context, AppRoutes.step1FormPermintaanScreen);
   }
 
   /// Navigates to the step1FormApplyScreen when the action is triggered.
   onTapCancel(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.step1FormApplyScreen);
+    Navigator.pushNamed(context, AppRoutes.step1FormPermintaanScreen);
   }
 
   /// Navigates to the homeScreen when the action is triggered.
   onTapLanjutkan(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.homeScreen);
+    Navigator.pushNamed(context, AppRoutes.step3FormPermintaanScreen);
   }
 }

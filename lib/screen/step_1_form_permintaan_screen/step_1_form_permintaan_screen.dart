@@ -1,3 +1,5 @@
+import 'package:simfuni_v1/widgets/app_bar/appbar_subtitle.dart';
+import 'package:simfuni_v1/widgets/app_bar/appbar_subtitle_three.dart';
 import 'package:simfuni_v1/widgets/app_bar/custom_app_bar.dart';
 import 'package:simfuni_v1/widgets/app_bar/appbar_leading_image.dart';
 import 'package:simfuni_v1/widgets/app_bar/appbar_title.dart';
@@ -36,7 +38,13 @@ class Step1FormPermintaanScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: theme.colorScheme.onErrorContainer,
         resizeToAvoidBottomInset: false,
-        appBar: _buildAppBar(context),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(kToolbarHeight),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: _buildAppBar(context),
+          ),
+        ),
         body: Container(
           width: double.maxFinite,
           padding: EdgeInsets.symmetric(vertical: 14.v),
@@ -51,21 +59,31 @@ class Step1FormPermintaanScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Judul Pengajuan",
-                            style: CustomTextStyles.titleSmallInter),
+                        Text(
+                          "Judul Pengajuan",
+                          style: CustomTextStyles.titleSmallInter,
+                        ),
                         SizedBox(height: 5.v),
                         _buildInput(context),
                         SizedBox(height: 16.v),
-                        Text("Tentang Pengajuan",
-                            style: CustomTextStyles.titleSmallInter),
+                        Text(
+                          "Tentang Pengajuan",
+                          style: CustomTextStyles.titleSmallInter,
+                        ),
                         SizedBox(height: 5.v),
                         _buildInput1(context),
                         SizedBox(height: 14.v),
-                        Text("Alamat", style: theme.textTheme.titleSmall),
+                        Text(
+                          "Alamat",
+                          style: theme.textTheme.titleSmall,
+                        ),
                         SizedBox(height: 7.v),
                         _buildInput2(context),
                         SizedBox(height: 15.v),
-                        Text("Requiment", style: theme.textTheme.titleSmall),
+                        Text(
+                          "Requiment",
+                          style: theme.textTheme.titleSmall,
+                        ),
                         SizedBox(height: 5.v),
                         _buildSettings(context),
                         SizedBox(height: 4.v),
@@ -158,25 +176,22 @@ class Step1FormPermintaanScreen extends StatelessWidget {
   /// Section Widget
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
-      leadingWidth: 49.h,
+      leadingWidth: 60.h,
       leading: AppbarLeadingImage(
           imagePath: ImageConstant.imgFloatingIcon,
-          margin: EdgeInsets.only(left: 25.h, top: 5.v, bottom: 26.v),
+          // margin: EdgeInsets.only(left: 25.h, top: 5.v, bottom: 26.v),
           onTap: () {
             onTapFloatingIcon(context);
           }),
       centerTitle: true,
       title: Column(
         children: [
-          AppbarTitle(
-            text: "Form Pengajuan Permintaan ",
-            style: const TextStyle(fontSize: 8),
-          ),
+          AppbarSubtitle(text: "Form Pengajuan Permintaan  "),
           SizedBox(height: 7.v),
-          AppbarSubtitleFour(
+          AppbarSubtitleThree(
             text: "Step 1",
             margin: EdgeInsets.only(left: 87.h, right: 88.h),
-          )
+          ),
         ],
       ),
     );
@@ -352,6 +367,6 @@ class Step1FormPermintaanScreen extends StatelessWidget {
 
   /// Navigates to the step2FormPermintaanOneScreen when the action is triggered.
   onTapLanjutkan(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.step2FormPermintaanOneScreen);
+    Navigator.pushNamed(context, AppRoutes.step2FormPermintaanScreen);
   }
 }

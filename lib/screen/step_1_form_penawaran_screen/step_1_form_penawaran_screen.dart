@@ -1,7 +1,7 @@
+import 'package:simfuni_v1/widgets/app_bar/appbar_subtitle.dart';
+import 'package:simfuni_v1/widgets/app_bar/appbar_subtitle_three.dart';
 import 'package:simfuni_v1/widgets/app_bar/custom_app_bar.dart';
 import 'package:simfuni_v1/widgets/app_bar/appbar_leading_image.dart';
-import 'package:simfuni_v1/widgets/app_bar/appbar_title.dart';
-import 'package:simfuni_v1/widgets/app_bar/appbar_subtitle_four.dart';
 import 'package:simfuni_v1/widgets/custom_text_form_field.dart';
 import 'package:simfuni_v1/widgets/custom_outlined_button.dart';
 import 'package:simfuni_v1/widgets/custom_elevated_button.dart';
@@ -25,97 +25,120 @@ class Step1FormPenawaranScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
-            backgroundColor: theme.colorScheme.onErrorContainer,
-            resizeToAvoidBottomInset: false,
-            appBar: _buildAppBar(context),
-            body: SizedBox(
-                width: SizeUtils.width,
-                child: SingleChildScrollView(
-                    padding: EdgeInsets.only(top: 11.v),
-                    child: Container(
-                        margin: EdgeInsets.only(bottom: 5.v),
-                        padding: EdgeInsets.symmetric(horizontal: 20.h),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("Judul Penawaran",
-                                  style: CustomTextStyles.titleSmallInter),
-                              SizedBox(height: 6.v),
-                              _buildInput(context),
-                              SizedBox(height: 16.v),
-                              Text("Tentang Penawaran",
-                                  style: CustomTextStyles.titleSmallInter),
-                              SizedBox(height: 5.v),
-                              _buildInput1(context),
-                              SizedBox(height: 14.v),
-                              Text("Alamat", style: theme.textTheme.titleSmall),
-                              SizedBox(height: 7.v),
-                              _buildInput2(context),
-                              SizedBox(height: 14.v),
-                              Text("Jumlah", style: theme.textTheme.titleSmall),
-                              SizedBox(height: 7.v),
-                              _buildInput3(context),
-                              SizedBox(height: 14.v),
-                              Text("Harga Perkiraan Sendiri (HPS)",
-                                  style: theme.textTheme.titleSmall),
-                              SizedBox(height: 7.v),
-                              _buildFrame(context),
-                              SizedBox(height: 77.v),
-                              _buildFrame1(context)
-                            ]))))));
+      child: Scaffold(
+        backgroundColor: theme.colorScheme.onErrorContainer,
+        resizeToAvoidBottomInset: false,
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(kToolbarHeight),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: _buildAppBar(context),
+          ),
+        ),
+        body: SizedBox(
+          width: SizeUtils.width,
+          child: SingleChildScrollView(
+            padding: EdgeInsets.only(top: 11.v),
+            child: Container(
+              margin: EdgeInsets.only(bottom: 5.v),
+              padding: EdgeInsets.symmetric(horizontal: 20.h),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Judul Penawaran",
+                      style: CustomTextStyles.titleSmallInter),
+                  SizedBox(height: 6.v),
+                  _buildInput(context),
+                  SizedBox(height: 16.v),
+                  Text("Tentang Penawaran",
+                      style: CustomTextStyles.titleSmallInter),
+                  SizedBox(height: 5.v),
+                  _buildInput1(context),
+                  SizedBox(height: 14.v),
+                  Text("Alamat", style: theme.textTheme.titleSmall),
+                  SizedBox(height: 7.v),
+                  _buildInput2(context),
+                  SizedBox(height: 14.v),
+                  Text("Jumlah", style: theme.textTheme.titleSmall),
+                  SizedBox(height: 7.v),
+                  _buildInput3(context),
+                  SizedBox(height: 14.v),
+                  Text("Harga Perkiraan Sendiri (HPS)",
+                      style: theme.textTheme.titleSmall),
+                  SizedBox(height: 7.v),
+                  _buildFrame(context),
+                  SizedBox(height: 77.v),
+                  _buildFrame1(context)
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
   /// Section Widget
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
-        leadingWidth: 49.h,
-        leading: AppbarLeadingImage(
-            imagePath: ImageConstant.imgFloatingIcon,
-            margin: EdgeInsets.only(left: 25.h, top: 5.v, bottom: 26.v),
-            onTap: () {
-              onTapFloatingIcon(context);
-            }),
-        centerTitle: true,
-        title: Column(children: [
-          AppbarTitle(
-            text: "Form Pengajuan Penawaran ",
-            style: const TextStyle(fontSize: 16),
-          ),
+      leadingWidth: 49.h,
+      leading: AppbarLeadingImage(
+        imagePath: ImageConstant.imgFloatingIcon,
+        onTap: () {
+          onTapFloatingIcon(context);
+        },
+      ),
+      centerTitle: true,
+      title: Column(
+        children: [
+          AppbarSubtitle(text: "Form Pengajuan Penawaran"),
           SizedBox(height: 6.v),
-          AppbarSubtitleFour(
-              text: "Step 1", margin: EdgeInsets.only(left: 87.h, right: 86.h))
-        ]));
+          AppbarSubtitleThree(
+            text: "Step 1",
+            margin: EdgeInsets.only(left: 87.h, right: 88.h),
+          ),
+        ],
+      ),
+    );
   }
 
   /// Section Widget
   Widget _buildInput(BuildContext context) {
     return CustomTextFormField(
-        controller: inputController,
-        hintText: "Judul penawaran",
-        hintStyle: CustomTextStyles.titleSmallInterBluegray10004,
-        borderDecoration: TextFormFieldStyleHelper.fillBlue,
-        fillColor: appTheme.blue50);
+      controller: inputController,
+      hintText: "Judul penawaran",
+      hintStyle: CustomTextStyles.titleSmallInterBluegray10004,
+      borderDecoration: TextFormFieldStyleHelper.fillBlue,
+      fillColor: appTheme.blue50,
+    );
   }
 
   /// Section Widget
   Widget _buildInput1(BuildContext context) {
     return CustomTextFormField(
-        controller: inputController1,
-        hintText:
-            "Jelaskan lebih rinci mengenai penawaran seperti apa penawaran  yang anda tawarkan",
-        hintStyle: CustomTextStyles.titleSmallInterBluegray10001,
-        maxLines: 7,
-        contentPadding: EdgeInsets.symmetric(horizontal: 10.h, vertical: 12.v));
+      controller: inputController1,
+      hintText:
+          "Jelaskan lebih rinci mengenai penawaran seperti apa penawaran  yang anda tawarkan",
+      hintStyle: CustomTextStyles.titleSmallInterBluegray10001,
+      maxLines: 7,
+      contentPadding: EdgeInsets.symmetric(
+        horizontal: 10.h,
+        vertical: 12.v,
+      ),
+    );
   }
 
   /// Section Widget
   Widget _buildInput2(BuildContext context) {
     return CustomTextFormField(
-        controller: inputController2,
-        hintText: "masukkan alamat lokasi stok berada",
-        maxLines: 6,
-        contentPadding: EdgeInsets.symmetric(horizontal: 8.h, vertical: 13.v));
+      controller: inputController2,
+      hintText: "masukkan alamat lokasi stok berada",
+      maxLines: 6,
+      contentPadding: EdgeInsets.symmetric(
+        horizontal: 8.h,
+        vertical: 13.v,
+      ),
+    );
   }
 
   /// Section Widget
@@ -129,50 +152,66 @@ class Step1FormPenawaranScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildInput4(BuildContext context) {
     return Expanded(
-        child: CustomTextFormField(
-            controller: inputController4,
-            hintText: "Rp ",
-            hintStyle: CustomTextStyles.titleSmallPrimary,
-            textInputAction: TextInputAction.done));
+      child: CustomTextFormField(
+        controller: inputController4,
+        hintText: "Rp ",
+        hintStyle: CustomTextStyles.titleSmallPrimary,
+        textInputAction: TextInputAction.done,
+      ),
+    );
   }
 
   /// Section Widget
   Widget _buildFrame(BuildContext context) {
-    return Row(children: [
-      _buildInput4(context),
-      Padding(
+    return Row(
+      children: [
+        _buildInput4(context),
+        Padding(
           padding: EdgeInsets.only(left: 6.h, top: 14.v, bottom: 14.v),
-          child: Text("00,-", style: CustomTextStyles.titleSmallBlack900))
-    ]);
+          child: Text(
+            "00,-",
+            style: CustomTextStyles.titleSmallBlack900,
+          ),
+        )
+      ],
+    );
   }
 
   /// Section Widget
   Widget _buildCancel(BuildContext context) {
     return Expanded(
-        child: CustomOutlinedButton(
-            text: "cancel",
-            margin: EdgeInsets.only(right: 10.h),
-            onPressed: () {
-              onTapCancel(context);
-            }));
+      child: CustomOutlinedButton(
+        text: "cancel",
+        margin: EdgeInsets.only(right: 10.h),
+        onPressed: () {
+          onTapCancel(context);
+        },
+      ),
+    );
   }
 
   /// Section Widget
   Widget _buildLanjutkan(BuildContext context) {
     return Expanded(
-        child: CustomElevatedButton(
-            text: "Lanjutkan",
-            margin: EdgeInsets.only(left: 10.h),
-            onPressed: () {
-              onTapLanjutkan(context);
-            }));
+      child: CustomElevatedButton(
+        text: "Lanjutkan",
+        margin: EdgeInsets.only(left: 10.h),
+        onPressed: () {
+          onTapLanjutkan(context);
+        },
+      ),
+    );
   }
 
   /// Section Widget
   Widget _buildFrame1(BuildContext context) {
     return Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [_buildCancel(context), _buildLanjutkan(context)]);
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        _buildCancel(context),
+        _buildLanjutkan(context),
+      ],
+    );
   }
 
   /// Navigates to the pengajuanScreen when the action is triggered.
