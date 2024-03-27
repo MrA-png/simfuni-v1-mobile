@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:simfuni_v1/core/app_export.dart';
+import 'package:simfuni_v1/helper/penawaran_helper.dart';
 import 'package:simfuni_v1/widgets/app_bar/appbar_subtitle.dart';
 import 'package:simfuni_v1/widgets/app_bar/appbar_subtitle_three.dart';
 import 'package:simfuni_v1/widgets/app_bar/custom_app_bar.dart';
@@ -5,22 +8,15 @@ import 'package:simfuni_v1/widgets/app_bar/appbar_leading_image.dart';
 import 'package:simfuni_v1/widgets/custom_text_form_field.dart';
 import 'package:simfuni_v1/widgets/custom_outlined_button.dart';
 import 'package:simfuni_v1/widgets/custom_elevated_button.dart';
-import 'package:flutter/material.dart';
-import 'package:simfuni_v1/core/app_export.dart';
 
-// ignore_for_file: must_be_immutable
 class Step1FormPenawaranScreen extends StatelessWidget {
   Step1FormPenawaranScreen({Key? key}) : super(key: key);
-
-  TextEditingController inputController = TextEditingController();
-
-  TextEditingController inputController1 = TextEditingController();
-
-  TextEditingController inputController2 = TextEditingController();
-
-  TextEditingController inputController3 = TextEditingController();
-
-  TextEditingController inputController4 = TextEditingController();
+  PenawaranHelper penawaranHelper = PenawaranHelper();
+  TextEditingController inputControllerJudul = TextEditingController();
+  TextEditingController inputControllerTentang = TextEditingController();
+  TextEditingController inputControllerAlamat = TextEditingController();
+  TextEditingController inputControllerJumlah = TextEditingController();
+  TextEditingController inputControllerHPS = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -48,23 +44,23 @@ class Step1FormPenawaranScreen extends StatelessWidget {
                   Text("Judul Penawaran",
                       style: CustomTextStyles.titleSmallInter),
                   SizedBox(height: 6.v),
-                  _buildInput(context),
+                  _buildInputJudul(context),
                   SizedBox(height: 16.v),
                   Text("Tentang Penawaran",
                       style: CustomTextStyles.titleSmallInter),
                   SizedBox(height: 5.v),
-                  _buildInput1(context),
+                  _buildInputTentang(context),
                   SizedBox(height: 14.v),
-                  Text("Alamat", style: theme.textTheme.titleSmall),
+                  Text("Alamat", style: CustomTextStyles.titleSmallInter),
                   SizedBox(height: 7.v),
-                  _buildInput2(context),
+                  _buildInputAlamat(context),
                   SizedBox(height: 14.v),
-                  Text("Jumlah", style: theme.textTheme.titleSmall),
+                  Text("Jumlah", style: CustomTextStyles.titleSmallInter),
                   SizedBox(height: 7.v),
-                  _buildInput3(context),
+                  _buildInputJumlah(context),
                   SizedBox(height: 14.v),
                   Text("Harga Perkiraan Sendiri (HPS)",
-                      style: theme.textTheme.titleSmall),
+                      style: CustomTextStyles.titleSmallInter),
                   SizedBox(height: 7.v),
                   _buildFrame(context),
                   SizedBox(height: 77.v),
@@ -78,7 +74,6 @@ class Step1FormPenawaranScreen extends StatelessWidget {
     );
   }
 
-  /// Section Widget
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
       leadingWidth: 49.h,
@@ -102,10 +97,9 @@ class Step1FormPenawaranScreen extends StatelessWidget {
     );
   }
 
-  /// Section Widget
-  Widget _buildInput(BuildContext context) {
+  Widget _buildInputJudul(BuildContext context) {
     return CustomTextFormField(
-      controller: inputController,
+      controller: inputControllerJudul,
       hintText: "Judul penawaran",
       hintStyle: CustomTextStyles.titleSmallInterBluegray10004,
       borderDecoration: TextFormFieldStyleHelper.fillBlue,
@@ -113,14 +107,15 @@ class Step1FormPenawaranScreen extends StatelessWidget {
     );
   }
 
-  /// Section Widget
-  Widget _buildInput1(BuildContext context) {
+  Widget _buildInputTentang(BuildContext context) {
     return CustomTextFormField(
-      controller: inputController1,
+      controller: inputControllerTentang,
       hintText:
           "Jelaskan lebih rinci mengenai penawaran seperti apa penawaran  yang anda tawarkan",
-      hintStyle: CustomTextStyles.titleSmallInterBluegray10001,
+      hintStyle: CustomTextStyles.titleSmallInterBluegray10004,
       maxLines: 7,
+      borderDecoration: TextFormFieldStyleHelper.fillBlue,
+      fillColor: appTheme.blue50,
       contentPadding: EdgeInsets.symmetric(
         horizontal: 10.h,
         vertical: 12.v,
@@ -128,12 +123,14 @@ class Step1FormPenawaranScreen extends StatelessWidget {
     );
   }
 
-  /// Section Widget
-  Widget _buildInput2(BuildContext context) {
+  Widget _buildInputAlamat(BuildContext context) {
     return CustomTextFormField(
-      controller: inputController2,
+      controller: inputControllerAlamat,
       hintText: "masukkan alamat lokasi stok berada",
       maxLines: 6,
+      hintStyle: CustomTextStyles.titleSmallInterBluegray10004,
+      borderDecoration: TextFormFieldStyleHelper.fillBlue,
+      fillColor: appTheme.blue50,
       contentPadding: EdgeInsets.symmetric(
         horizontal: 8.h,
         vertical: 13.v,
@@ -141,31 +138,33 @@ class Step1FormPenawaranScreen extends StatelessWidget {
     );
   }
 
-  /// Section Widget
-  Widget _buildInput3(BuildContext context) {
+  Widget _buildInputJumlah(BuildContext context) {
     return CustomTextFormField(
-        controller: inputController3,
-        hintText: "Jumlah permintaan",
-        hintStyle: CustomTextStyles.titleSmallBluegray10001);
+      controller: inputControllerJumlah,
+      hintText: "Jumlah permintaan",
+      hintStyle: CustomTextStyles.titleSmallInterBluegray10004,
+      borderDecoration: TextFormFieldStyleHelper.fillBlue,
+      fillColor: appTheme.blue50,
+    );
   }
 
-  /// Section Widget
-  Widget _buildInput4(BuildContext context) {
+  Widget _buildInputHPS(BuildContext context) {
     return Expanded(
       child: CustomTextFormField(
-        controller: inputController4,
+        controller: inputControllerHPS,
         hintText: "Rp ",
         hintStyle: CustomTextStyles.titleSmallPrimary,
+        borderDecoration: TextFormFieldStyleHelper.fillBlue,
+        fillColor: appTheme.blue50,
         textInputAction: TextInputAction.done,
       ),
     );
   }
 
-  /// Section Widget
   Widget _buildFrame(BuildContext context) {
     return Row(
       children: [
-        _buildInput4(context),
+        _buildInputHPS(context),
         Padding(
           padding: EdgeInsets.only(left: 6.h, top: 14.v, bottom: 14.v),
           child: Text(
@@ -177,7 +176,6 @@ class Step1FormPenawaranScreen extends StatelessWidget {
     );
   }
 
-  /// Section Widget
   Widget _buildCancel(BuildContext context) {
     return Expanded(
       child: CustomOutlinedButton(
@@ -190,7 +188,6 @@ class Step1FormPenawaranScreen extends StatelessWidget {
     );
   }
 
-  /// Section Widget
   Widget _buildLanjutkan(BuildContext context) {
     return Expanded(
       child: CustomElevatedButton(
@@ -203,7 +200,6 @@ class Step1FormPenawaranScreen extends StatelessWidget {
     );
   }
 
-  /// Section Widget
   Widget _buildFrame1(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -214,18 +210,36 @@ class Step1FormPenawaranScreen extends StatelessWidget {
     );
   }
 
-  /// Navigates to the pengajuanScreen when the action is triggered.
   onTapFloatingIcon(BuildContext context) {
     Navigator.pushNamed(context, AppRoutes.pengajuanScreen);
   }
 
-  /// Navigates to the pengajuanScreen when the action is triggered.
   onTapCancel(BuildContext context) {
     Navigator.pushNamed(context, AppRoutes.pengajuanScreen);
   }
 
-  /// Navigates to the step2FormPenawaranScreen when the action is triggered.
-  onTapLanjutkan(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.step2FormPenawaranScreen);
+  onTapLanjutkan(BuildContext context) async {
+    try {
+      await penawaranHelper.postData(
+        inputControllerJudul.text,
+        inputControllerTentang.text,
+        inputControllerAlamat.text,
+        int.tryParse(inputControllerJumlah.text) ?? 0,
+        int.tryParse(inputControllerHPS.text) ?? 0,
+        context,
+      );
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Penawaran berhasil ditambahkan'),
+        ),
+      );
+
+      // Navigator.pushNamed(context, AppRoutes.step2FormPenawaranScreen);
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Gagal menambahkan penawaran: $e')),
+      );
+    }
   }
 }
