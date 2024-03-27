@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'core/app_export.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:intl/date_symbol_data_local.dart';
+
 
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
 
@@ -16,7 +18,10 @@ Future<void> main() async {
   ]);
 
   ThemeHelper().changeTheme('primary');
-  runApp(const MyApp());
+  initializeDateFormatting('id_ID', null).then((_) {
+    runApp(MyApp());
+  });
+
 }
 
 class MyApp extends StatelessWidget {

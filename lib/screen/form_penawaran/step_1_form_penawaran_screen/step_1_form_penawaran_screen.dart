@@ -235,7 +235,7 @@ class Step1FormPenawaranScreen extends StatelessWidget {
         ),
       );
 
-      // Navigator.pushNamed(context, AppRoutes.step2FormPenawaranScreen);
+      Navigator.pushNamed(context, AppRoutes.step2FormPenawaranScreen);
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Gagal menambahkan penawaran: $e')),

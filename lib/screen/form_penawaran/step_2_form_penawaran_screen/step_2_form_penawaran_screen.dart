@@ -1,3 +1,4 @@
+// ignore_for_file: library_private_types_in_public_api
 import 'package:simfuni_v1/widgets/app_bar/appbar_subtitle.dart';
 import 'package:simfuni_v1/widgets/app_bar/custom_app_bar.dart';
 import 'package:simfuni_v1/widgets/app_bar/appbar_leading_image.dart';
@@ -8,9 +9,42 @@ import 'package:simfuni_v1/widgets/custom_outlined_button.dart';
 import 'package:simfuni_v1/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:simfuni_v1/core/app_export.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
+import 'package:intl/intl.dart';
 
-class Step2FormPenawaranScreen extends StatelessWidget {
+class Step2FormPenawaranScreen extends StatefulWidget {
   const Step2FormPenawaranScreen({Key? key}) : super(key: key);
+
+  @override
+  _Step2FormPenawaranScreenState createState() =>
+      _Step2FormPenawaranScreenState();
+}
+
+class _Step2FormPenawaranScreenState extends State<Step2FormPenawaranScreen> {
+  String? _fileName;
+  int? _fileSize;
+  String? _uploadDate;
+
+  Future<void> _chooseImage(BuildContext context) async {
+    final ImagePicker picker = ImagePicker();
+    final pickedImage = await picker.pickImage(source: ImageSource.gallery);
+    if (pickedImage != null) {
+      final File imageFile = File(pickedImage.path);
+      final int fileSize = await imageFile.length();
+      final DateTime uploadTime = DateTime.now();
+      final String fileName = pickedImage.path.split('/').last;
+
+      final DateFormat formatter = DateFormat('dd MMMM yyyy', 'id_ID');
+      final formattedDate = formatter.format(uploadTime.toLocal());
+
+      setState(() {
+        _fileName = fileName;
+        _fileSize = fileSize;
+        _uploadDate = formattedDate;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,16 +65,27 @@ class Step2FormPenawaranScreen extends StatelessWidget {
             children: [
               Align(
                 alignment: Alignment.centerLeft,
-                child: Text("Foto Pendukung",
-                    style: CustomTextStyles.titleSmallInter),
+                child: Text(
+                  "Foto Pendukung",
+                  style: CustomTextStyles.titleSmallInter,
+                ),
               ),
               SizedBox(height: 14.v),
-              _buildUpload(context),
+              GestureDetector(
+                onTap: () => _chooseImage(context),
+                child: _buildUpload(context),
+              ),
               SizedBox(height: 35.v),
-              _buildUploadingFiles(context),
+              if (_fileName != null && _fileSize != null && _uploadDate != null)
+                _buildUploadingFiles(
+                  context,
+                  _fileName!,
+                  _fileSize!,
+                  _uploadDate!,
+                ),
               const Spacer(),
               SizedBox(height: 34.v),
-              _buildFrame(context)
+              _buildFrame(context),
             ],
           ),
         ),
@@ -53,10 +98,11 @@ class Step2FormPenawaranScreen extends StatelessWidget {
     return CustomAppBar(
       leadingWidth: 49.h,
       leading: AppbarLeadingImage(
-          imagePath: ImageConstant.imgFloatingIcon,
-          onTap: () {
-            onTapFloatingIcon(context);
-          },),
+        imagePath: ImageConstant.imgFloatingIcon,
+        onTap: () {
+          onTapFloatingIcon(context);
+        },
+      ),
       centerTitle: true,
       title: Column(
         children: [
@@ -118,10 +164,15 @@ class Step2FormPenawaranScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildUploadingFiles(BuildContext context) {
+  Widget _buildUploadingFiles(BuildContext context, String fileName,
+      int fileSize, String uploadDate) {
+
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 13.h),
-      padding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 12.v),
+      padding: EdgeInsets.symmetric(
+        horizontal: 16.h,
+        vertical: 12.v,
+      ),
       decoration: AppDecoration.fillGray10001
           .copyWith(borderRadius: BorderRadiusStyle.circleBorder15),
       child: Column(
@@ -148,13 +199,16 @@ class Step2FormPenawaranScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Wireframing_11_01_2024.word",
+                      fileName,
                       style: theme.textTheme.labelLarge,
                     ),
                     SizedBox(height: 2.v),
                     Row(
                       children: [
-                        Text("92 kb", style: theme.textTheme.bodySmall),
+                        Text(
+                          '${(fileSize / 1024).toStringAsFixed(2)} kb',
+                          style: theme.textTheme.bodySmall,
+                        ),
                         Container(
                           height: 5.adaptSize,
                           width: 5.adaptSize,
@@ -168,7 +222,7 @@ class Step2FormPenawaranScreen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(left: 8.h),
                           child: Text(
-                            "4 second left",
+                            uploadDate,
                             style: theme.textTheme.bodySmall,
                           ),
                         ),
@@ -179,31 +233,12 @@ class Step2FormPenawaranScreen extends StatelessWidget {
               ),
               CustomImageView(
                 imagePath: ImageConstant.imgIcon24,
-                height: 24.adaptSize,
-                width: 24.adaptSize,
+                height: 22.adaptSize,
+                width: 22.adaptSize,
                 radius: BorderRadius.circular(12.h),
                 margin: EdgeInsets.only(left: 26.h, bottom: 9.v),
               ),
             ],
-          ),
-          SizedBox(height: 11.v),
-          Container(
-            height: 6.v,
-            width: 262.h,
-            decoration: BoxDecoration(
-              color: theme.colorScheme.onErrorContainer,
-              borderRadius: BorderRadius.circular(3.h),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(3.h),
-              child: LinearProgressIndicator(
-                value: 0.51,
-                backgroundColor: theme.colorScheme.onErrorContainer,
-                valueColor: AlwaysStoppedAnimation<Color>(
-                  theme.colorScheme.primary,
-                ),
-              ),
-            ),
           ),
         ],
       ),
