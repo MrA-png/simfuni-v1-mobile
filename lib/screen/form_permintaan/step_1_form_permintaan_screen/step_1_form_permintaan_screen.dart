@@ -1,9 +1,9 @@
+// ignore_for_file: unused_element
+
 import 'package:simfuni_v1/widgets/app_bar/appbar_subtitle.dart';
 import 'package:simfuni_v1/widgets/app_bar/appbar_subtitle_three.dart';
 import 'package:simfuni_v1/widgets/app_bar/custom_app_bar.dart';
 import 'package:simfuni_v1/widgets/app_bar/appbar_leading_image.dart';
-import 'package:simfuni_v1/widgets/app_bar/appbar_title.dart';
-import 'package:simfuni_v1/widgets/app_bar/appbar_subtitle_four.dart';
 import 'package:simfuni_v1/widgets/custom_text_form_field.dart';
 import 'package:simfuni_v1/widgets/custom_checkbox_button.dart';
 import 'package:simfuni_v1/widgets/custom_icon_button.dart';
@@ -22,9 +22,13 @@ class Step1FormPermintaanScreen extends StatelessWidget {
 
   TextEditingController inputController2 = TextEditingController();
 
-  bool settings = false;
+  bool ktp = false;
 
-  bool settings1 = false;
+  bool wajibPajak = false;
+
+  bool pengalaman = false;
+
+  bool nib = false;
 
   TextEditingController lainnyaController = TextEditingController();
 
@@ -64,85 +68,35 @@ class Step1FormPermintaanScreen extends StatelessWidget {
                           style: CustomTextStyles.titleSmallInter,
                         ),
                         SizedBox(height: 5.v),
-                        _buildInput(context),
+                        _buildInputJudul(context),
                         SizedBox(height: 16.v),
                         Text(
                           "Tentang Pengajuan",
                           style: CustomTextStyles.titleSmallInter,
                         ),
                         SizedBox(height: 5.v),
-                        _buildInput1(context),
+                        _buildInputTentang(context),
                         SizedBox(height: 14.v),
                         Text(
                           "Alamat",
                           style: theme.textTheme.titleSmall,
                         ),
                         SizedBox(height: 7.v),
-                        _buildInput2(context),
+                        _buildInputAlamat(context),
                         SizedBox(height: 15.v),
                         Text(
-                          "Requiment",
+                          "Requirement",
                           style: theme.textTheme.titleSmall,
                         ),
                         SizedBox(height: 5.v),
-                        _buildSettings(context),
+                        _buildInputIndentitas(context),
                         SizedBox(height: 4.v),
-                        Padding(
-                          padding: EdgeInsets.only(right: 83.h),
-                          child: Row(
-                            children: [
-                              CustomImageView(
-                                imagePath:
-                                    ImageConstant.imgSettingsOnerrorcontainer,
-                                height: 24.adaptSize,
-                                width: 24.adaptSize,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(
-                                    left: 18.h, top: 5.v, bottom: 3.v),
-                                child: Text(
-                                  "Memiliki Pengalaman minimal 3 tahun",
-                                  style: CustomTextStyles
-                                      .labelMediumBlack900Medium,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        _buildPengalaman(context),
                         SizedBox(height: 4.v),
                         _buildSettings1(context),
-                        SizedBox(height: 7.v),
-                        Padding(
-                          padding: EdgeInsets.only(right: 37.h),
-                          child: Row(
-                            children: [
-                              CustomImageView(
-                                imagePath:
-                                    ImageConstant.imgSettingsOnerrorcontainer,
-                                height: 24.adaptSize,
-                                width: 24.adaptSize,
-                                margin: EdgeInsets.only(
-                                  top: 2.v,
-                                  bottom: 3.v,
-                                ),
-                              ),
-                              Expanded(
-                                child: Container(
-                                  width: 240.h,
-                                  margin: EdgeInsets.only(left: 18.h),
-                                  child: Text(
-                                    "Memiliki NIB Nomor Induk Berusaha yang masih berlaku",
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: CustomTextStyles
-                                        .labelMediumBlack900Medium,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(height: 5.v),
+                        SizedBox(height: 4.v),
+                        _buildNib(context),
+                        SizedBox(height: 4.v),
                         _buildFrame(context),
                         SizedBox(height: 12.v),
                         CustomIconButton(
@@ -157,9 +111,9 @@ class Step1FormPermintaanScreen extends StatelessWidget {
                         SizedBox(height: 22.v),
                         Text("Jumlah", style: theme.textTheme.titleSmall),
                         SizedBox(height: 7.v),
-                        _buildInput3(context),
+                        _buildInputJumlah(context),
                         SizedBox(height: 14.v),
-                        _buildTwentyFive(context)
+                        _buildInputHPS(context)
                       ],
                     ),
                   ),
@@ -198,44 +152,51 @@ class Step1FormPermintaanScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildInput(BuildContext context) {
+  Widget _buildInputJudul(BuildContext context) {
     return CustomTextFormField(
-        controller: inputController,
-        hintText: "Judul Pengajuan",
-        hintStyle: CustomTextStyles.titleSmallInterBluegray10004,
-        borderDecoration: TextFormFieldStyleHelper.fillBlue,
-        fillColor: appTheme.blue50);
+      controller: inputController,
+      hintText: "Judul Pengajuan",
+      hintStyle: CustomTextStyles.titleSmallInterBluegray10004,
+      borderDecoration: TextFormFieldStyleHelper.fillBlue,
+      fillColor: appTheme.blue50,
+    );
   }
 
   /// Section Widget
-  Widget _buildInput1(BuildContext context) {
+  Widget _buildInputTentang(BuildContext context) {
     return CustomTextFormField(
       controller: inputController1,
       hintText:
           "Jelaskan lebih rinci mengenai permintaan seperti apa permintaan yang anda butuhkan",
-      hintStyle: CustomTextStyles.titleSmallInterBluegray10001,
+      hintStyle: CustomTextStyles.titleSmallInterBluegray10004,
+      borderDecoration: TextFormFieldStyleHelper.fillBlue,
+      fillColor: appTheme.blue50,
       maxLines: 7,
       contentPadding: EdgeInsets.symmetric(horizontal: 11.h, vertical: 12.v),
     );
   }
 
   /// Section Widget
-  Widget _buildInput2(BuildContext context) {
+  Widget _buildInputAlamat(BuildContext context) {
     return CustomTextFormField(
-        controller: inputController2,
-        hintText: "masukkan alamat lokasi penerima",
-        maxLines: 6);
+      controller: inputController2,
+      hintText: "masukkan alamat lokasi penerima",
+      maxLines: 6,
+      hintStyle: CustomTextStyles.titleSmallInterBluegray10004,
+      borderDecoration: TextFormFieldStyleHelper.fillBlue,
+      fillColor: appTheme.blue50,
+    );
   }
 
   /// Section Widget
-  Widget _buildSettings(BuildContext context) {
+  Widget _buildInputIndentitas(BuildContext context) {
     return CustomCheckboxButton(
       text:
           "Memiliki identitas kewarganegaraan Indonesia seperti Kartu Tanda Penduduk (KTP)/Paspor/Surat Keterangan Domisili Tinggal.",
       isExpandedText: true,
-      value: settings,
+      value: ktp,
       onChange: (value) {
-        settings = value;
+        ktp = value;
       },
     );
   }
@@ -247,9 +208,37 @@ class Step1FormPermintaanScreen extends StatelessWidget {
       child: CustomCheckboxButton(
         text: "Mempunyai status valid keterangan Wajib Pajak / NPWP",
         isExpandedText: true,
-        value: settings1,
+        value: wajibPajak,
         onChange: (value) {
-          settings1 = value;
+          wajibPajak = value;
+        },
+      ),
+    );
+  }
+
+  Widget _buildPengalaman(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(right: 25.h),
+      child: CustomCheckboxButton(
+        text: "Memiliki Pengalaman minimal 3 tahun",
+        isExpandedText: true,
+        value: pengalaman,
+        onChange: (value) {
+          pengalaman = value;
+        },
+      ),
+    );
+  }
+
+  Widget _buildNib(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(right: 25.h),
+      child: CustomCheckboxButton(
+        text: "Memiliki NIB Nomor Induk Berusaha yang masih berlaku",
+        isExpandedText: true,
+        value: nib,
+        onChange: (value) {
+          nib = value;
         },
       ),
     );
@@ -258,15 +247,14 @@ class Step1FormPermintaanScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildLainnya(BuildContext context) {
     return Expanded(
-      child: Padding(
-        padding: EdgeInsets.only(left: 18.h),
-        child: CustomTextFormField(
-          controller: lainnyaController,
-          hintText: "Lainnya",
-          hintStyle: CustomTextStyles.labelLargeOnPrimaryContainer,
-          borderDecoration: TextFormFieldStyleHelper.underLineBlue,
-          filled: false,
+      child: CustomTextFormField(
+        controller: lainnyaController,
+        hintText: "Lainnya",
+        hintStyle: CustomTextStyles.titleSmallPrimary.copyWith(
+          fontSize: 12,
         ),
+        borderDecoration: TextFormFieldStyleHelper.underLineBlue,
+        filled: false,
       ),
     );
   }
@@ -287,29 +275,37 @@ class Step1FormPermintaanScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildInput3(BuildContext context) {
+  Widget _buildInputJumlah(BuildContext context) {
     return CustomTextFormField(
-        controller: inputController3,
-        hintText: "Jumlah permintaan",
-        hintStyle: CustomTextStyles.titleSmallBluegray10001);
+      controller: inputController3,
+      hintText: "Jumlah permintaan",
+      hintStyle: CustomTextStyles.titleSmallInterBluegray10004,
+      borderDecoration: TextFormFieldStyleHelper.fillBlue,
+      fillColor: appTheme.blue50,
+    );
   }
 
   /// Section Widget
-  Widget _buildTwentyFive(BuildContext context) {
+  Widget _buildInputHPS(BuildContext context) {
     return Row(
       children: [
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Harga Perkiraan Sendiri (HPS)",
-                  style: theme.textTheme.titleSmall),
+              Text(
+                "Harga Perkiraan Sendiri (HPS)",
+                style: theme.textTheme.titleSmall,
+              ),
               SizedBox(height: 7.v),
               CustomTextFormField(
-                  controller: inputController4,
-                  hintText: "Rp ",
-                  hintStyle: CustomTextStyles.titleSmallPrimary,
-                  textInputAction: TextInputAction.done)
+                controller: inputController4,
+                hintText: "Rp ",
+                hintStyle: CustomTextStyles.titleSmallPrimary,
+                borderDecoration: TextFormFieldStyleHelper.fillBlue,
+                fillColor: appTheme.blue50,
+                textInputAction: TextInputAction.done,
+              )
             ],
           ),
         ),
